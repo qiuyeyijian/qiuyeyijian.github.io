@@ -5,5 +5,8 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="font_1714686_m4wjhtpqzps" level="application" />
+    <orderEntry type="library" name="font_1714686_esofpdk3mpp" level="application" />
+    <orderEntry type="library" name="font_1714686_pe7e6a5qzi" level="application" />
   </component>
 </module>

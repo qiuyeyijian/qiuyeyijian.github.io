@@ -289,20 +289,20 @@ section {
 
 #software-list .icon {
     margin: 0 auto 20px auto;
-    padding-top: 10px;
+    /*padding-top: 10px;*/
     display: inline-block;
     text-align: center;
     border-radius: 50%;
     width: 60px;
     height: 60px;
     background-color: #1bbca3;
+    line-height: 60px;
     transition: all 0.3s ease-in-out;
     /*box-sizing: border-box;*/
 }
 
 #software-list .icon i {
-    font-size: 36px;
-    line-height: 1;
+    font-size: 60px;
     color: #ffffff;
 }
 
@@ -433,7 +433,7 @@ section {
 }
 
 #footer .footer-link-box .link-c a span {
-    font-size: 27px;
+    /*font-size: 27px;*/
     display: inline-block;
     /*background-color: #ffffff;*/
     color: #f1f1f1;
@@ -459,8 +459,16 @@ section {
     background-color: #fe596c;
 }
 
+#footer .footer-link-box .link-c .wei-bo span i {
+    font-size: 20px;
+}
+
 #footer .footer-link-box .link-c .wei-xin span{
     background-color: #42c86b;
+}
+
+#footer .footer-link-box .link-c .wei-xin span i {
+    font-size: 20px;
 }
 
 #footer .footer-link-box .link-c a .qrcode {

@@ -68,3 +68,7 @@ fabric.properties
 #Test directory
 test
 test/*
+
+#Iconfont
+assets/vendor/iconfont
+assets/vendor/iconfont/*
