@@ -3,7 +3,8 @@
 # General
 --------------------------------------------------------------*/
 body {
-    background-color: #F2F5F4;
+    /*background-color: #F2F5F4;*/
+    background-color: #fff;
 }
 
 * {
