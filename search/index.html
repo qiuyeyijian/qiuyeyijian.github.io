@@ -10,10 +10,42 @@
     <!-- 阿里巴巴矢量图标 -->
     <link href="../assets/css/iconfont.css" rel="stylesheet">
 
+    <!--Style css-->
+    <link href="../assets/css/search.css" rel="stylesheet">
+
+    <!-- 引入jQuery-->
+    <script src="../assets/vendor/jquery/jquery-1.12.4.js"></script>
+
+    <script>
+        $(function () {
+            $.ajax({
+                type: "GET",
+                url: "//api/bing.php",
+                cache: false,
+                success: function (res) {
+                    let str = "http://cn.bing.com" + res.querySelector("url").innerHTML;
+                    $(".custom-bg").css("background-image","linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)), url("+str+")");
+                },
+                error: function (json) {
+                    alert(json.status);
+                }
+            })
+        })
+    </script>
+
 </head>
 <body>
+<!-- 背景图片-->
+<div id="custom-bg" class="custom-bg"></div>
 
-<h1><strong>Hello, world<i class="iconfont">&#xe60a;</i></strong></h1>
+<div id="search-container">
+    <form action="https://www.baidu.com/s" method="get" id="search-form">
+        <div class="search-box">
+            <div class="search-icon"><i class="iconfont icon-search"></i></div>
+            <input type="text" name="wd" class="search-input" autocomplete="off" maxlength="2048">
+        </div>
+    </form>
+</div>
 
 </body>
 </html>
