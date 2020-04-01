@@ -237,14 +237,6 @@ section {
     padding-left: 5px;
 }
 
-/*#software-list .row {*/
-/*    display: flex;*/
-/*    flex-wrap: wrap;        !*必要时换行*!*/
-/*    margin-right: -15px;*/
-/*    margin-left: -15px;*/
-/*    !*align-items: stretch; !important;*!*/
-/*}*/
-
 #software-list .icon-box-control {
     position: relative;
     padding: 0 15px;
@@ -337,6 +329,85 @@ section {
     color: #1bbca3;
 }
 
+/*--------------------------------------------------------------
+# Blog
+--------------------------------------------------------------*/
+
+#blog-news {
+    display: block;
+    background-color: #F2F5F4;
+}
+
+#blog-news .blog-card {
+    width: 380px;
+    height: 464px;
+    border: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-clip: border-box;
+    border-radius: 0.25rem;
+    padding: 0 15px;
+    margin-top: 20px;
+}
+
+#blog-news .blog-card-item {
+    background-color: #fff;
+    /*position: relative;*/
+}
+
+#blog-news .blog-card-item img {
+    height: 262px;
+    width: 100%;
+
+}
+
+#blog-news .blog-card-item .card-body {
+    width: 350px;
+    height: 182px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+#blog-news .blog-card-item .card-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #334240;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+#blog-news .blog-card-item .card-text {
+    /*!*text-align: left;*!*/
+    /*text-indent: 2em;*/
+    /*margin-bottom: 20px;*/
+    margin-top: 20px;
+}
+
+#blog-news .blog-card-item .btn {
+    border-radius: 50px;
+    padding: 4px 30px 6px 30px;
+    border: 2px solid #1bbca3;
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    background-color: transparent;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1.5;
+    position: absolute;
+    left: 32%;
+    bottom: 20px;
+}
+
+#blog-news .blog-card-item .btn:hover {
+    color: #ffffff;
+    background-color: #1bbca3;
+}
 
 /*--------------------------------------------------------------
 # Footer
