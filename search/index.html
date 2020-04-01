@@ -23,7 +23,7 @@
                 url: "https://qiuyeyijian.com/api/bing.php",
                 cache: false,
                 success: function (res) {
-                    let str = "http://cn.bing.com" + res.querySelector("url").innerHTML;
+                    let str = "https://cn.bing.com" + res.querySelector("url").innerHTML;
                     $(".custom-bg").css("background-image","linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)), url("+str+")");
                 },
                 error: function (json) {
@@ -47,5 +47,9 @@
     </form>
 </div>
 
+
+
+<!--google AdSense-->
+<script data-ad-client="ca-pub-6255948911986746" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </body>
 </html>
