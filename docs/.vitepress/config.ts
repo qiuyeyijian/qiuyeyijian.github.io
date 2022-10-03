@@ -24,8 +24,8 @@ export default {
         items: [
           { text: "CPP", link: "/Language/CPP/" },
           { text: "Python", link: "/Language/Python/" },
-          { text: "Python", link: "/Language/JavaScript/" },
-          { text: "Python", link: "/Language/TypeScript/" },
+          { text: "JavaScript", link: "/Language/JavaScript/" },
+          { text: "TypeScript", link: "/Language/TypeScript/" },
         ],
       },
       {
