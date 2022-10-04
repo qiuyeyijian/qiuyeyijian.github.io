@@ -30,8 +30,8 @@ export default {
         text: "工具&效率",
         activeMatch: "/Tools/",
         items: [
+          { text: "Git", link: "/Tools/Git/" },
           { text: "Docker", link: "/Tools/Docker/" },
-          { text: "Markdown", link: "/Tools/Markdown/" },
         ],
       },
     ],
