@@ -1,6 +1,7 @@
 export default {
   title: "秋叶依剑",
   description: "秋叶依剑的官方博客",
+  titleTemplate: "秋叶依剑的官方博客",
   ignoreDeadLinks: true,
 
   head: [
