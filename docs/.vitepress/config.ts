@@ -4,10 +4,7 @@ export default {
   titleTemplate: "秋叶依剑的官方博客",
   ignoreDeadLinks: true,
 
-  head: [
-    ["link", { rel: "preconnect", href: "/logo.png", crossorigin: "" }],
-    // would render: <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  ],
+  head: [["link", { rel: "icon", href: "/logo.png" }]],
 
   themeConfig: {
     logo: "/logo.png",
