@@ -3,6 +3,11 @@ export default {
   description: "秋叶依剑的官方博客",
   ignoreDeadLinks: true,
 
+  head: [
+    ["link", { rel: "preconnect", href: "/logo.png", crossorigin: "" }],
+    // would render: <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  ],
+
   themeConfig: {
     logo: "/logo.png",
     lastUpdatedText: "Updated Date",
@@ -21,12 +26,7 @@ export default {
       {
         text: "编程语言",
         activeMatch: "/Language/",
-        items: [
-          { text: "CPP", link: "/Language/CPP/" },
-          { text: "Python", link: "/Language/Python/" },
-          { text: "JavaScript", link: "/Language/JavaScript/" },
-          { text: "TypeScript", link: "/Language/TypeScript/" },
-        ],
+        items: [{ text: "CPP", link: "/Language/CPP/" }],
       },
       {
         text: "工具&效率",
@@ -52,6 +52,24 @@ export default {
             { text: "用户管理", link: "/Linux/user-management" },
             { text: "磁盘管理", link: "/Linux/disk-management" },
           ],
+        },
+      ],
+      "/Language/CPP/": [
+        {
+          text: "CPP11",
+          collapsible: true,
+          collapsed: true,
+          items: [
+            { text: "Index", link: "/Language/CPP/CPP11/" },
+            { text: "多线程", link: "/Language/CPP/CPP11/multi-thread" },
+            { text: "智能指针", link: "/Language/CPP/CPP11/smart-pointer" },
+          ],
+        },
+        {
+          text: "Gtest",
+          collapsible: true,
+          collapsed: true,
+          items: [{ text: "Index", link: "/Language/CPP/Gtest/" }],
         },
       ],
     },
