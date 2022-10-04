@@ -1,1 +1,0 @@
-import{_ as e,c as t,o as a}from"./app.1d503175.js";const P=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Language/CPP/CPP11/index.md"}'),n={name:"Language/CPP/CPP11/index.md"};function r(o,s,c,d,i,p){return a(),t("div")}const m=e(n,[["render",r]]);export{P as __pageData,m as default};
