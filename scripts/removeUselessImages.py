@@ -55,7 +55,7 @@ def deploy(path="./"):
         with open(md, "r", encoding="utf-8") as f:
             text = f.read()
             # 使用正则匹配文中的图片引用
-            pattern = re.compile(r"!\[.*?]\((.*?)\)")
+            pattern = re.compile(r"!\[.*?\]\((.*?)\)")
             result = pattern.findall(text)
 
         with open(md, "r", encoding="utf-8") as f:
