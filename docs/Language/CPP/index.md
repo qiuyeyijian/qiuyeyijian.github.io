@@ -372,7 +372,7 @@ int main() {
 
 > 关于指针与常量，只要记着一点：指针常量，指针是常量
 
-### 指针与函数
+## 指针与函数
 
 指针函数：返回类型是指针的函数
 
@@ -395,6 +395,10 @@ int (*minus)(int, int) = subtraction;
 int* m = addition(1, 2);
 int n = operation(3, *m, minus);
 ```
+
+[万字长文系统梳理一下C++函数指针 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/168627944)
+
+
 
 ## 迭代器
 
@@ -684,7 +688,7 @@ bool func(A* a);
 #include "A.h"		// 在cpp文件中包含所需要的头文件
 ```
 
-​
+
 
 ## #define 与 const 常量的选择
 
@@ -890,12 +894,20 @@ int main()
 }
 ```
 
+
+
+## [析构函数为什么要定义为虚函数？](https://blog.csdn.net/weixin_40583088/article/details/126989414)
+
+
+
+
+
 ## 其他
 
 ### 二维数组
 
 ```cpp
-// 推荐：使用vector
+ 
 vector<vector<int>> vec(row, vector<int> (col,1));
 
 
