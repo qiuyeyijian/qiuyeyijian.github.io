@@ -1,0 +1,1 @@
+import{_ as a,c as e,o as s,a as t}from"./app.127de033.js";const m=JSON.parse('{"title":"XMake","description":"","frontmatter":{},"headers":[],"relativePath":"Tools/XMake/index.md"}'),n={name:"Tools/XMake/index.md"},o=t("",2),c=[o];function r(_,i,l,p,d,h){return s(),e("div",null,c)}const x=a(n,[["render",r]]);export{m as __pageData,x as default};
