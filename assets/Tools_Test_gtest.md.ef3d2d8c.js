@@ -1,1 +1,0 @@
-import{_ as t,c as e,o as s}from"./app.127de033.js";const l=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Tools/Test/gtest.md"}'),o={name:"Tools/Test/gtest.md"};function a(r,c,n,p,_,d){return s(),e("div")}const m=t(o,[["render",a]]);export{l as __pageData,m as default};
