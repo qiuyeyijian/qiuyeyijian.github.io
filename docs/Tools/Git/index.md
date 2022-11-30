@@ -438,29 +438,44 @@ git log -g
 git branch recover_branch commitid
 ```
 
+
+
 ## Commit 提交规范
 
 ```
-type: description
+<type>(<scope>): <subject>
 ```
 
-type 是 commit 的类别，只允许如下几种标识。
+type，必选。commit 的类别，只允许如下几种标识。
 
-description 是对本次提交的简短描述。不超过 50 个字符。推荐以动词开头，如： 设置、修改、增加、删减、撤销等。
+scope，可选。是本次提交影响范围。可以是：问题 ID / 模块名称 / 需求 ID / 变更号。
 
-| type       | description                                                  |
+subject，必选。是对本次提交的简短描述。不超过 50 个字符。推荐以动词开头，如： 设置、修改、增加、删减、撤销等。
+
+| type       | subject                                                      |
 | ---------- | ------------------------------------------------------------ |
-| `feat`     | 功能feature的意思，也是最常用的。当你的功能有变更的时候，都可以采用这种类型的type |
-| `fix`      | 修复 bug                                                     |
-| `style`    | 代码格式调整，比如执行了format、更改了tab显示等              |
-| `chore`    | 其他改动。比如一些注释修改或者文件清理。不影响src和test代码文件的，都可以放在这里 |
+| `feat`     | 功能feature的意思，也是最常用的。对应实际业务代码变动。比如增加或者修改一些业务处理函数，接口等 |
+| `fix`      | 对应因修复bug而产生的业务代码变动。                          |
+| `chore`    | 其他改动。比如一些注释修改或者文件清理。不影响src和test里面实际代码的，都可以放在这里 |
+| `test`     | 对应测试代码变动，比如增加或者修改测试用例                   |
 | `refactor` | 重构代码。指的是代码结构的调整，比如使用了一些设计模式重新组织了代码 |
-| `test`     | 增加了单元测试和自动化相关的代码                             |
+| `style`    | 代码格式调整，比如执行了format、更改了tab显示，代码命名风格变动等，没有功能性的变动。 |
 | `docs`     | 更新了文档，或者更新了注释                                   |
+| `revert`   | 回滚了一些前面的代码                                         |
 | `build`    | 影响编译的一些更改，比如更改了maven插件、增加了npm的过程等   |
 | `revert`   | 回滚了一些前面的代码                                         |
 | `ci`       | 持续集成方面的更改。现在有些build系统喜欢把ci功能使用yml描述。如有这种更改，建议使用ci |
 | `perf`     | 对项目或者模块进行了性能优化。比如一些jvm的参数改动，把stringbuffer改为stringbuilder等 |
+
+```
+git commit -m"feat(someip): 增加xxx传输方式，修改xxx接口"
+
+git commit -m"fix(#5834): 修复inproc通信EM_ComAgent_Send第5次时返回失败问题"
+```
+
+
+
+
 
 
 
