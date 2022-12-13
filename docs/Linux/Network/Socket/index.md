@@ -719,6 +719,85 @@ int main(int argc, const char *argv[]) {
 
 
 
+### 本地socket
+
+```cpp
+// local socket
+#include <arpa/inet.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/socket.h>
+#include <sys/stat.h>
+#include <unistd.h>
+
+int main(int argc, const char *argv[])
+{
+    const char *IP = "127.0.0.1"; // 服务器IP地址一般设置成本地所有IP，不需要改动
+    const int PORT = 9821;        // 服务器开放的端口号
+
+    // 发送和接收缓冲区
+    char send_buf[1024];
+    char recv_buf[1024];
+    int val = 1; // 套接字配置函数所使用的值
+    memset(send_buf, 0, sizeof(send_buf));
+    memset(recv_buf, 0, sizeof(recv_buf));
+    sprintf(send_buf, "%s", "Hello, World!");
+
+    /* 1. 设置发送端IP和端口*/
+    struct sockaddr_in server_addr;
+    server_addr.sin_family = AF_INET;
+    server_addr.sin_port = htons(PORT); //设置服务器端口，必须是没有被占用的端口
+    inet_pton(AF_INET, IP,
+              &server_addr.sin_addr.s_addr); //服务器IP设置为本地所有的IP
+
+    /* 2. 创建监听的套接字 */
+    int lfd = socket(AF_INET, SOCK_STREAM, 0);
+
+    /* 2.1 配置套接字，实现端口复用 */
+    setsockopt(lfd, SOL_SOCKET, SO_REUSEADDR, (void *)&val, sizeof(val));
+
+    /* 3. 将套接字和服务器地址绑定*/
+    bind(lfd, (struct sockaddr *)&server_addr, sizeof(server_addr));
+
+    /* 4. 监听套接字，并允许最大连接数为64 */
+    listen(lfd, 64);
+
+    /* 5. 创建客户端socket */
+    int cfd = socket(AF_INET, SOCK_STREAM, 0);
+    /* 6. 连接服务端 */
+    connect(cfd, (struct sockaddr *)&server_addr, sizeof(server_addr));
+
+    /* 7. 阻塞等待连接请求，并接受连接请求 */
+    struct sockaddr_in client_info; // 客户端地址信息
+    socklen_t clien_len = sizeof(client_info);
+    int accept_fd = accept(lfd, (struct sockaddr *)&client_info, &clien_len);
+
+    // 如果有客户端连接，则打印客户端信息：IP地址和端口号
+    printf("client iP: %s, port: %d\n",
+           inet_ntop(AF_INET, &client_info.sin_addr.s_addr, recv_buf,
+                     sizeof(recv_buf)),
+           ntohs(client_info.sin_port));
+
+    // 通过客户端的socket发送数据
+    send(cfd, send_buf, strlen(send_buf), 0);
+
+    // 通过服务端accept创建的socket接收数据
+    recv(accept_fd, recv_buf, sizeof(recv_buf), 0);
+
+    printf("recv: %s\n", recv_buf);
+
+    close(cfd);
+    close(lfd);
+
+    return 0;
+}
+```
+
+
+
+
+
 ## TCP状态转换
 
 在 TCP 进行三次握手，或者四次挥手的过程中，通信的服务器和客户端内部会发送状态上的变化，发生的状态变化在程序中是看不到的，这个状态的变化也不需要程序猿去维护，但是在某些情况下进行程序的调试会去查看相关的状态信息，先来看三次握手过程中的状态转换。
