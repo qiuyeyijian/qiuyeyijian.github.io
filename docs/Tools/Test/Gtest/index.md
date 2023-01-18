@@ -89,6 +89,8 @@ void CTestFixture::TearDown()
 int main(int argc, char* argv[]) {
     // 创建测试环境
      ::testing::AddGlobalTestEnvironment(new CTestEnvironment);
+    ::testing::GTEST_FLAG(output) = "xml:";
+    
     // gtest的测试案例允许接收一系列的命令行参数，因此，我们将命令行参数传递给gtest，进行一些初始化操作。
     ::testing::InitGoogleTest(&argc, argv);
 

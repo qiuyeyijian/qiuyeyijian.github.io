@@ -72,7 +72,7 @@ cout << "unsigned long long 最大值：" << ULLONG_MAX << endl;
 
 ### final
 
-C++ 中增加了 final 关键字来限制某个类不能被继承，或者某个虚函数不能被重写，和 Jave 的 final 关键字的功能是类似的。如果使用 final 修饰函数，只能修饰虚函数，并且要把final关键字放到类或者函数的后面。
+C++ 中增加了 final 关键字来限制某个类不能被继承，或者某个虚函数不能被重写，和 Java 的 final 关键字的功能是类似的。如果使用 final 修饰函数，只能修饰虚函数，并且要把final关键字放到类或者函数的后面。
 
 ```cpp
 class Base {
