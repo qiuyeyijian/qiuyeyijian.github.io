@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as r}from"./app.fc352372.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Computer/index.md"}'),a={name:"Computer/index.md"};function o(n,s,c,p,d,i){return r(),t("div")}const f=e(a,[["render",o]]);export{m as __pageData,f as default};
