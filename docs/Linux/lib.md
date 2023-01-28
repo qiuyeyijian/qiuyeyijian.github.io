@@ -293,7 +293,40 @@ ldd 可执行程序名
 
 
 
+## 显示链接和隐式链接
 
+### 隐式链接
+
+```cpp
+// log.h
+#include<string>
+__declspec(dllexport) void log(const std::string & str);
+
+//log.cpp
+#include "log.h"
+void log(const std::string& str) {
+	printf("%s\n", str.c_str());
+}
+
+// CMakeLists.txt
+add_library("log" SHARED "log.cpp" "log.h")
+```
+
+
+
+```cpp
+// main.cpp
+#include<log/log.h>
+#pragma comment(lib,"D:\\workplace\\CPP\\Demo\\CMakeProject1\\build\\main\\Debug\\log.lib")
+
+int main()
+{
+	log("Hello, world");
+	return 0;
+}
+```
+
+生成的`log.lib`和`log.dll`记得拷贝到和`main.exe`同一文件夹内
 
 
 
