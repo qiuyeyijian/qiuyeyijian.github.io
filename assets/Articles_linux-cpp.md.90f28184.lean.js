@@ -1,1 +1,0 @@
-import{_ as s,c as n,o as a,a as l}from"./app.fc352372.js";const i=JSON.parse('{"title":"Linux C++","description":"","frontmatter":{},"headers":[],"relativePath":"Articles/linux-cpp.md"}'),p={name:"Articles/linux-cpp.md"},o=l("",2),e=[o];function t(c,D,r,F,y,C){return a(),n("div",null,e)}const d=s(p,[["render",t]]);export{i as __pageData,d as default};

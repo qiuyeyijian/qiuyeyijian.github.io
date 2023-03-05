@@ -1,6 +1,0 @@
-import{_ as s,c as a,o as e,a as n}from"./app.fc352372.js";const C=JSON.parse('{"title":"Visual Studio","description":"","frontmatter":{},"headers":[{"level":3,"title":"展开和折叠函数代码","slug":"展开和折叠函数代码","link":"#展开和折叠函数代码","children":[]}],"relativePath":"Articles/visual-studio.md"}'),t={name:"Articles/visual-studio.md"},l=n(`<h1 id="visual-studio" tabindex="-1">Visual Studio <a class="header-anchor" href="#visual-studio" aria-hidden="true">#</a></h1><h3 id="展开和折叠函数代码" tabindex="-1">展开和折叠函数代码 <a class="header-anchor" href="#展开和折叠函数代码" aria-hidden="true">#</a></h3><div class="language-"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki material-palenight"><code><span class="line"><span style="color:#A6ACCD;">Ctrl + M + O: 折叠所有方法</span></span>
-<span class="line"><span style="color:#A6ACCD;"></span></span>
-<span class="line"><span style="color:#A6ACCD;">Ctrl + M + M: 折叠或者展开当前方法</span></span>
-<span class="line"><span style="color:#A6ACCD;"></span></span>
-<span class="line"><span style="color:#A6ACCD;">Ctrl + M + L: 展开所有方法</span></span>
-<span class="line"><span style="color:#A6ACCD;"></span></span></code></pre></div>`,3),i=[l];function o(c,r,p,d,_,u){return e(),a("div",null,i)}const A=s(t,[["render",o]]);export{C as __pageData,A as default};
