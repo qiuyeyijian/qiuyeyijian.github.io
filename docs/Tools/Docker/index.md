@@ -2,6 +2,25 @@
 
 ## Docker 基本操作
 
+### 快速开始
+
+```bash
+docker pull ubuntu
+
+docker run -d -it -p 22:22 -v /Users/qiuyeyijian/Workspace/Docker/ubuntu:/home/Workspace --name ubuntu ubuntu
+
+docker attach 容器id/name
+
+docker system df --verbose
+```
+
+- `-it`: 以交互方式启动容器
+- `-p`: 当前物理机端口到容器端口的映射
+- `--name`: 为当前要运行的容器起个名字
+- `-v`: 本地路径到容器内路径的映射
+- `-d`: 代表后台运行容器
+- `--restart=always`
+
 ### 安装 Docker
 
 ```bash
@@ -20,7 +39,6 @@ sudo systemctl start docker
 sudo systemctl enable docker
 # Step 6: 测试
 docker run hello-world
-
 ```
 
 ### Docker 的中央仓库
