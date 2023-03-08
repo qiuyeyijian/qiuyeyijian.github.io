@@ -207,3 +207,49 @@ kill -s 9 9646(进程号)
 nohup java -jar test.jar >temp.txt &
 ```
 
+
+
+## 创建指定大小的文件
+
+【truncate】
+
+```bash
+truncate -s 25M test.txt
+```
+
+【fallocate】
+
+```bash
+fallocate -l 25000000 test.txt
+```
+
+【dd】
+
+```bash
+dd if=/dev/urandom of=test.txt bs=25MB count=1
+dd if=/dev/zero of=test.txt bs=25MB count=1
+```
+
+【head】
+
+```bash
+head -c 25MB /dev/urandom > test.txt
+head -c 25MB /dev/zero > test.txt
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

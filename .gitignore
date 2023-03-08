@@ -3,3 +3,4 @@ docs/.vitepress/dist
 package-lock.json
 Notes
 em-notes
+doctest

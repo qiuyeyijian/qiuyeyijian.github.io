@@ -589,11 +589,16 @@ src/**/foo
 
 
 
-
-
-
-
 ## 其他
+
+### 放弃本地修改，重新拉去远程分支
+
+```
+git fetch --all
+git reset --hard origin/master(master可修改为对应分支名)
+```
+
+
 
 ### 更改默认编辑器
 
