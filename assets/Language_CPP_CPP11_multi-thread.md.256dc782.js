@@ -1,1 +1,0 @@
-import{_ as e,c as t,o as a}from"./app.e8f7510a.js";const _=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Language/CPP/CPP11/multi-thread.md"}'),r={name:"Language/CPP/CPP11/multi-thread.md"};function n(o,s,c,d,i,m){return a(),t("div")}const l=e(r,[["render",n]]);export{_ as __pageData,l as default};
