@@ -18,6 +18,8 @@ Gtest 是 google 开发的一个开源的 C++测试框架，可在 Linux, Window
 
 如果一个 test 出现崩溃或有一个失败的断言，则该 test 是 fails，否则是 succeeds。。当一个 test suite 中的多个 test 需要共享一些通用对象和子程序时，可将其放入一个测试套件（Test Fixtures），具体请看宏测试下面的`TEST_F`宏。
 
+> [最新版本将SetUpTestCase变成了SetUpTestSuite](https://github.com/google/googletest/commit/3a460a26b7a91abf87af7f31b93d29f930e25c82)
+
 ```cpp
 #include <gtest/gtest.h>
 #include <gtest/gtest-param-test.h>
