@@ -21,6 +21,16 @@ docker system df --verbose
 - `-d`: 代表后台运行容器
 - `--restart=always`
 
+更新软件源：[ubuntu-ports | 镜像站使用帮助 | 清华大学开源软件镜像站 | Tsinghua Open Source Mirror](https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu-ports/)
+
+如果报`The certificate is NOT trusted. `在docker中执行如下命令
+
+```cpp
+touch /etc/apt/apt.conf.d/99verify-peer.conf  && echo >>/etc/apt/apt.conf.d/99verify-peer.conf "Acquire { https::Verify-Peer false }"
+```
+
+
+
 ### 安装 Docker
 
 ```bash
@@ -411,7 +421,7 @@ sudo docker update --restart=on-failure:10 容器id		//最大重启10次
 
 ```bash
 # 拉取镜像
-docker run -d -p 3306:3306 --name mysql --restart=always -e MYSQL_ROOT_PASSWORD=root daocloud.io/library/mysql:5.7.6
+docker run -d -p 3306:3306 --name mysql --restart=always -e MYSQL_ROOT_PASSWORD=root -d mysql
 ```
 
 ## Tomcat
