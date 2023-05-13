@@ -303,6 +303,16 @@ git push					# 合并完成推送到远程仓库
 git checkout HEAD~
 ```
 
+ 在执行合并时，使用`--strategy-option=theirs`选项来指定使用远程分支的更改：
+
+```cpp
+git merge dev --strategy-option=theirs
+```
+
+这样，如果合并时发生冲突，Git会直接选择远程分支的更改，从而不需要手动解决冲突。
+
+
+
 ### 删除分支
 
 ```bash

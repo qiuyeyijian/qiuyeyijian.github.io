@@ -22,3 +22,28 @@ int main(int argc, char const *argv[])
 }
 ```
 
+
+
+## 执行系统命令
+
+```cpp
+#include <stdio.h>
+#include <unistd.h>
+
+int main(int argc ,char **argv){
+	
+	char ret[1024] = {0};
+	FILE *fp;
+
+	//FILE *popen(const char *command, const char *type);
+	fp = popen("ls -l","r");
+
+	//size_t fwrite(const void *ptr, size_t size, size_t nmemb,FILE *stream);
+	int nread = fread(ret,1,1024,fp);
+	printf("read ret %d byte, %s\n",nread,ret);
+	
+	return 0;
+}
+
+```
+

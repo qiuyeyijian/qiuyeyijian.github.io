@@ -962,16 +962,43 @@ std::sort(vec.begin(), vec.end(), [](const string & a, const string & b) {return
 - `VA_ARGS`: 可变参数宏(variadic macros)。用于宏定义中参数列表的最后一个参数为省略号，一般多用在调试信息。
 - `##VA_ARGS`: 当可变参数的个数为0时，这里的##可以把把前面多余的","去掉,否则会编译出错。
 
-
-
 #define DEBUG1(format, ...) printf(format, __VA_ARGS__) //该宏定义GCC下报错，MSVC下未报错
+
 #define DEBUG2(format, ...) printf(format, ## __VA_ARGS__) //该宏定义GCC、MSVC下均未报错
 
 
 
-
-
 [C语言基础--宏函数_浮云流响的博客-CSDN博客_宏函数](https://blog.csdn.net/wit_732/article/details/106602503)
+
+## 宏定义两层的原因
+
+宏替换顺序：一个带参数的宏内部调用另一个宏，参数也是一个宏，则先替换外层的宏，再替换外层宏的参数，最后替换内层宏。因此采用两层转换之后，外边的宏先被替换了，但没有完全展开，然后参数被替换了(保证参数是宏时被展开)
+
+```cpp
+#define STR_IMPL(s) #s
+#define STR(s) EMTEST_STR_IMPL(s)
+```
+
+对于`STR(s1)`来说它的参数可能是一个变量也可能是另一个宏。
+
+按照宏替换顺序，定义两层可以保证当参数是另一个宏时，能够被正确展开。
+
+```cpp
+#define STR_IMPL(s) #s
+#define STR(s) EMTEST_STR_IMPL(s)
+#define TEST_VALUE 9821
+int main(int argc, char* argv[]) {
+
+    printf("STR_IMPL: %s\n", STR_IMPL(TEST_VALUE));
+    printf("STR: %s\n", STR(TEST_VALUE));
+    
+    return 0;
+}
+```
+
+
+
+
 
 ## 位域
 
@@ -1006,6 +1033,57 @@ int main()
 ## [析构函数为什么要定义为虚函数？](https://blog.csdn.net/weixin_40583088/article/details/126989414)
 
 
+
+
+
+## C语言可变参数实现
+
+```cpp
+#include<stdio.h>
+
+#define func(a, b, ...) __func(a, b, (NULL, ##__VA_ARGS__))
+void __func(int a, int b, int* c){
+    if(c != NULL) {
+        printf("c: %d\n", *c);
+    }
+    printf("a: %d, b: %d\n", a, b);
+}
+```
+
+
+
+C语言中，可变参数的实现依赖于stdarg.h头文件中的宏和函数。可变参数的实现需要以下步骤：
+
+1. 在函数中声明一个va_list类型的变量，用于存储可变参数的列表。
+2. 使用va_start宏初始化va_list变量，该宏的第一个参数为可变参数列表的变量名，第二个参数为可变参数列表的前一个参数的地址。
+3. 使用va_arg宏获取可变参数列表中的每个参数，该宏的第一个参数为va_list变量名，第二个参数为可变参数类型。
+4. 使用va_end宏关闭va_list变量。
+
+下面是一个示例代码：
+
+```cpp
+#include <stdarg.h>
+#include <stdio.h>
+
+void print_args(int count, ...) {
+    va_list args;
+    va_start(args, count);
+
+    for(int i = 0; i < count; i++) {
+        int arg = va_arg(args, int);
+        printf("%!d(MISSING) ", arg);
+    }
+
+    va_end(args);
+}
+
+int main() {
+    print_args(3, 1, 2, 3); // 输出：1 2 3
+    return 0;
+}
+```
+
+在上面的代码中，print_args函数接受一个整数count和任意个整数类型的参数，使用va_list类型的变量args存储可变参数列表。在循环中使用va_arg宏获取可变参数列表中的每个参数，并输出到控制台。最后使用va_end宏关闭va_list变量。在main函数中调用print_args函数，传入三个整数参数1、2、3。运行程序后，输出1 2 3。
 
 
 
