@@ -607,7 +607,13 @@ src/**/foo
 git fetch --all
 git reset --hard origin/master(master可修改为对应分支名)
 ```
-
+### 区分大小写
+Git 默认情况下不会区分文件名的大小写，这也是类 Unix 操作系统的一个特点。这意味着，如果你在同一个 Git 仓库中创建了两个文件，一个叫做 "file.txt"，另一个叫做 "File.txt"，Git 会将它们视为同一个文件。
+不过，如果你希望 Git 区分文件名大小写，可以通过设置 Git 的配置来实现。你可以在 Git 仓库的根目录下的 ".git/config" 文件中添加以下内容：
+```
+[core]
+    ignorecase = false
+```
 
 
 ### 更改默认编辑器
