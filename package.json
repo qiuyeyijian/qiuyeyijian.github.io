@@ -6,6 +6,7 @@
     "docs:serve": "vitepress serve docs"
   },
   "devDependencies": {
+    "@types/node": "^20.1.4",
     "@vitejs/plugin-vue": "^3.1.2",
     "vitepress": "^1.0.0-alpha.75"
   }
