@@ -50,7 +50,7 @@ export function getSidebarData(
   sidebarGenerateConfig: SidebarGenerateConfig = {}
 ) {
   const {
-    dirName = "Articles",
+    dirName = "articles",
     ignoreFileName = "",
     ignoreDirNames = ["demo", "asserts", "assets"],
   } = sidebarGenerateConfig;
