@@ -15,7 +15,7 @@
 - 在 Linux 中静态库以 lib 作为前缀，以.a 作为后缀，中间是库的名字自己指定即可，即: `libxxx.a`
 - 在 Windows 中静态库一般以 lib 作为前后缀，中间是库的名字需要自己指定，即: `libxxx.lib`
 
-![img](assets/static-lib.png)
+![img](./assets/static-lib.png)
 
 ### 生成静态链接库
 
@@ -118,7 +118,7 @@ g++ main.cpp -L ./ -l tools
 - `-fPIC `或 `-fpic `参数的作用是使得 gcc 生成的代码是与位置无关的，也就是使用相对位置。
 - `-shared`参数的作用是告诉编译器生成一个动态链接库。
 
-![img](assets/dll-0.png)
+![img](./assets/dll-0.png)
 
 封装一个`Log()`函数，用来打印测试信息。项目目录和代码和生成静态库一样。
 
@@ -279,9 +279,9 @@ ldd 可执行程序名
 | 库文件更新需要重新编译项目文件，生成新的可执行程序，浪费时间。 | 加载速度比静态库慢，以现在计算机的性能可以忽略             |
 |                                                              | 发布程序需要提供依赖的动态库                               |
 
-![img](assets/dll-1.png)
+![img](./assets/dll-1.png)
 
-![img](assets/dll-2.png)
+![img](./assets/dll-2.png)
 
 
 
