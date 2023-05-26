@@ -179,11 +179,5 @@ lcov --rc lcov_branch_coverage=1 --remove coverage.info '/usr/*' '*gtest*' --out
 genhtml --rc genhtml_branch_coverage=1 --legend coverage.info --output-directory coverage_report
 ```
 
-这段代码从我们前面编译的结果中收集覆盖率结果，并将结果输出到`coverage.info_tmp`文件中。但是这里面会包含非项目源码的覆盖率（例如google test），所以我们又通过另外一条命令来指定"src"文件夹进行过滤。最后，通过`genhtml`得到html格式的报告。
-
-
-
-
-
 
 
