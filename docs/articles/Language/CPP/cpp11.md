@@ -2340,6 +2340,16 @@ int main() {
 }
 ```
 
+```cpp
+enum class MyEnum : unsigned short {
+  Element1 = 0,
+  Element2 = 1,
+  Element3 = 2
+};
+```
+
+
+
 我们在声明强类型枚举的时候，也可以使用关键字 `enum struct`，效果与`enum struct`完全一样。
 
 ## 非受限联合体
