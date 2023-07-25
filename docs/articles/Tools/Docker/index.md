@@ -421,7 +421,7 @@ sudo docker update --restart=on-failure:10 容器id		//最大重启10次
 
 ```bash
 # 拉取镜像
-docker run -d -p 3306:3306 --name mysql --restart=always -e MYSQL_ROOT_PASSWORD=root -d mysql
+sudo docker run -p 3306:3306 --name mysql --restart=always -e MYSQL_ROOT_PASSWORD=123456 -d mysql
 ```
 
 ## Tomcat
