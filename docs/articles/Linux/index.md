@@ -229,6 +229,24 @@ make && make install
 yum install gcc-c++
 ```
 
+
+
+
+
+## 查看大文件
+
+### 查看当前目录前5个大文件或者文件夹
+
+```bash
+du -h . | sort -rh | head -n 5
+```
+
+
+
+
+
+
+
 ## Reference & Recommend
 
 《Linux 该这么学（第二版）》

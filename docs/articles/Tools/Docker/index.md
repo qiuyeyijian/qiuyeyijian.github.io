@@ -10,6 +10,7 @@ docker pull ubuntu
 docker run -d -it -p 22:22 -v /Users/qiuyeyijian/Workspace/Docker/ubuntu:/home/Workspace --name ubuntu ubuntu
 
 docker attach 容器id/name
+sudo docker exec -it 容器id/name /bin/bash
 
 docker system df --verbose
 ```
