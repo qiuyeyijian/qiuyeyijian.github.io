@@ -1,5 +1,96 @@
 ## MySQL 数据库简单操作命令
 
+## 安装Mysql
+
+1. 安装 MySQL：
+
+   ```````
+   sudo apt update
+   sudo apt install mysql-server
+   
+2. 配置 MySQL：
+
+   默认情况下，MySQL 只允许本地用户登录。要允许外部用户登录，请按照以下步骤编辑 MySQL 配置文件：
+
+   ``````
+   sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
+   ``````
+
+   ```
+   # bind-address = 127.0.0.1
+   mysqlx-bind-address     = 0.0.0.0
+   ```
+
+   这将允许 MySQL 接受来自任何 IP 地址的连接。
+
+3. 重启 MySQL 服务：
+
+   ```````
+   sudo systemctl restart mysql
+   
+4. 创建允许远程登录的用户：
+
+   ``````
+   sudo mysql
+   ``````
+
+   进入 MySQL 命令行后，使用以下命令创建新用户并授予远程登录权限：
+
+   ```
+   CREATE USER 'burong'@'%' IDENTIFIED WITH mysql_native_password BY 'burong';
+   GRANT ALL PRIVILEGES ON *.* TO 'burong'@'%';
+   FLUSH PRIVILEGES;
+   ```
+
+   将 `username` 替换为您要创建的新用户的名称，将 `password` 替换为该用户的密码。`'%'` 表示该用户可以从任何 IP 地址连接到 MySQL。
+
+5. 确保防火墙允许 MySQL 的连接请求：
+
+   如果您的 Ubuntu 系统使用防火墙，请确保允许 MySQL 的连接请求。例如，如果您使用的是 UFW 防火墙，请使用以下命令允许 MySQL 的连接请求：
+
+   ```````
+   sudo ufw allow mysql
+
+现在，您已经成功安装并配置了 MySQL，允许外部用户登录。其他用户现在可以使用以下命令从远程主机连接到 MySQL：
+
+```
+mysql -u username -p -h server_ip_address
+```
+
+将 `username` 替换为您创建的新用户的名称，将 `server_ip_address` 替换为运行 MySQL 的服务器的 IP 地址。
+
+## 卸载Mysql
+
+在 Ubuntu 上卸载 MySQL 可以按照以下步骤操作：
+
+1. 停止 MySQL 服务：
+
+   ``````
+   sudo systemctl stop mysql
+   
+2. 卸载 MySQL：
+
+   ``````
+   sudo apt-get remove --purge mysql-server mysql-client mysql-common
+   sudo apt-get autoremove
+   sudo apt-get autoclean
+   
+3. 删除 MySQL 数据库和配置文件：
+
+   ``````
+   sudo rm -rf /etc/mysql /var/lib/mysql*
+   
+4. 清理 MySQL 用户和组：
+
+   ``````
+   sudo deluser mysql
+   sudo delgroup mysql
+   sudo delgroup mysql
+
+现在，MySQL 已经从您的 Ubuntu 系统中完全卸载。如果您需要重新安装 MySQL，请参考 MySQL 官方文档或者 Ubuntu 的官方文档。
+
+
+
 ### MySQL数据库的连接和导入表
 
 ```mysql
@@ -116,7 +207,7 @@ update students set age=age+1;				//将所有人的年龄增加1
 update students set name="张伟鹏", age=19 where tel="13288097888";
 ```
 
-
+f
 
 #### 4. 删除与添加字段
 
