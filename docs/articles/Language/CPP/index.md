@@ -629,10 +629,10 @@ int main() {
 	memset(arr2, '.', sizeof(arr2));
 
 	// 使用fill给一维数组赋值
-	fill(arr1, arr1+29, 1);
+	std::fill(arr1, arr1+29, 1);
 
 	// 使用fill给二维数组赋值
-	fill(arr2[0], arr2[0] + 29*29, '$');
+	std::fill(arr2[0], arr2[0] + 29*29, '$');
 
 	return 0;
 }
