@@ -1,0 +1,1 @@
+import{_ as e,c as a,o as t}from"./chunks/framework.fZt_wkQb.js";const l=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"articles/Language/index.md","filePath":"articles/Language/index.md"}'),n={name:"articles/Language/index.md"};function r(s,c,i,o,d,p){return t(),a("div")}const m=e(n,[["render",r]]);export{l as __pageData,m as default};
